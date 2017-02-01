@@ -13,9 +13,10 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
@@ -45,7 +46,9 @@
                         <a href="#services">Materiais</a>
                     </li>
                     <li>
-                        <a href="#"><button class="btn btn-danger">Administrador</button></a>
+                        <%= link_to admin_session_path do%>
+                            <button class="btn btn-danger">Administrador</button>
+                        <% end %>
                     </li>
                 </ul>
             </div>
@@ -62,7 +65,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <hr class="intro-divider"">
                     </div>
                 </div>
             </div>
@@ -127,7 +129,7 @@
     </div>
     <!-- /.content-section-a -->
 
-    <div class="content-section-a">
+    <div class="content-section-a vermelho">
 
         <div class="container">
 
@@ -206,7 +208,7 @@
     <!-- /.banner -->
 
     <!-- Footer -->
-    <footer>
+    <footer class="amarelo">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

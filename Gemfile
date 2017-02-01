@@ -27,7 +27,11 @@ gem 'devise'
 # Bootstrap
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 # Font awesome
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+#foreman
+gem 'foreman'
+#sbadmin v2
+gem 'bootstrap_sb_admin_base_v2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
