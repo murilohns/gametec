@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :notices
   devise_for :admins
 
   get 'home/index'

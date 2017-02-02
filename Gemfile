@@ -32,6 +32,8 @@ gem 'font-awesome-rails'
 gem 'foreman'
 #sbadmin v2
 gem 'bootstrap_sb_admin_base_v2'
+# Easy file attachment management for ActiveRecord 
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
