@@ -85,12 +85,14 @@
 	            <div class="col-lg-12">
 	                <h2 class="page-header">Fique por dentro de nossas novidades!</h2>
 	            </div>
+            <% @notices.each do |n| %>
 	            <div class="col-md-4 col-sm-6">
-	                <a href="portfolio-item.html">
-	                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-	                </a>
-	                <p>Teste de Texto</p>
+	                <%= link_to notice do %>
+	                    <%= link_to image_tag(n.image.url(:thumb), class:'img-responsive img-portfolio img-hover'), n.image.url, target: '_blank' %>
+	                <% end %>
+	                <h4><%= n.title %></h4>
 	            </div>
+            <% end %>
 	            <div class="col-md-4 col-sm-6">
 	                <a href="portfolio-item.html">
 	                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
