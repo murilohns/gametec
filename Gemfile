@@ -34,8 +34,11 @@ gem 'foreman'
 gem 'bootstrap_sb_admin_base_v2'
 # Easy file attachment management for ActiveRecord 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
-
+#Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks 
+gem 'carrierwave', '~> 1.0'
 # Use jquery as the JavaScript library
+gem 'bootstrap-sass', '~> 3.3.6'
+
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

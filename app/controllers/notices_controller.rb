@@ -1,4 +1,4 @@
-class NoticesController < ApplicationController
+class NoticesController < AdminController 
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
 
   # GET /notices
@@ -15,6 +15,7 @@ class NoticesController < ApplicationController
   # GET /notices/new
   def new
     @notice = Notice.new
+    @notice.admin = current_admin
   end
 
   # GET /notices/1/edit
@@ -25,6 +26,7 @@ class NoticesController < ApplicationController
   # POST /notices.json
   def create
     @notice = Notice.new(notice_params)
+    @notice.admin = current_admin
 
     respond_to do |format|
       if @notice.save
@@ -69,6 +71,6 @@ class NoticesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notice_params
-      params.require(:notice).permit(:title, :content, :admin_id, :image, :admin)
+      params.require(:notice).permit(:title, :content, :admin_id, :image)
     end
 end

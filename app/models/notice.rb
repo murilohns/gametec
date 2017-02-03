@@ -1,5 +1,6 @@
 class Notice < ApplicationRecord
-  belongs_to :admin
+  belongs_to :admin, optional: true
+
   has_attached_file :image,
   					styles:{thumb:["700x450#",:jpg]}
   validates_attachment :image,
