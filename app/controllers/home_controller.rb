@@ -3,5 +3,6 @@ class HomeController < ApplicationController
 	
   def index
   	@notices = Notice.all
+  	@materials = Material.all
   end
 end
