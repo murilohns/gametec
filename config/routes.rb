@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'materials/index'
-
-  get 'materials/new'
-
-  get 'materials/create'
-
-  get 'materials/destroy'
-
+  resources :materials, only: [:index, :new, :create, :destroy]
+  
   resources :notices
   devise_for :admins
 

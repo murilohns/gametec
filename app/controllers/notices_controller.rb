@@ -15,7 +15,6 @@ class NoticesController < AdminController
   # GET /notices/new
   def new
     @notice = Notice.new
-    @notice.admin = current_admin
   end
 
   # GET /notices/1/edit
@@ -71,6 +70,6 @@ class NoticesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notice_params
-      params.require(:notice).permit(:title, :content, :admin_id, :image)
+      params.require(:notice).permit(:title, :content, :image)
     end
 end
