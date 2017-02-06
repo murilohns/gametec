@@ -91,6 +91,10 @@
 	                    <%= link_to image_tag(n.image.url(:thumb), class:'img-responsive img-portfolio img-hover'), n.image.url, target: '_blank' %>
 	                <% end %>
 	                <h4><%= n.title %></h4>
+                    <% if admin_signed_in? %>
+                        <%= link_to 'Editar', edit_notice_path(n), class:"btn btn-success", type:"button" %>
+                        <%= link_to 'Apagar', n, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", type:"button" %>
+                    <%end %>
 	            </div>
             <% end %>
 	        </div>

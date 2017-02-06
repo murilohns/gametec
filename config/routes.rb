@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :materials, only: [:index, :new, :create, :destroy]
   
   resources :notices
+  
   devise_for :admins
 
   get 'home/index'
