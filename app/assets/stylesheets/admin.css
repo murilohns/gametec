@@ -13,3 +13,15 @@
  *= require bootstrap_sb_admin_base_v2
  *= require font-awesome
  */
+
+ body{
+  background: url("/assets/admin-background.png");
+ }
+
+ .espacocima{
+  padding-top: 60px
+ }
+
+ .opacidade {
+    opacity: 0.85;
+ }

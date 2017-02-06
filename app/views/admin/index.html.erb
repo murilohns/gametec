@@ -18,12 +18,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -41,18 +38,17 @@
                             <fieldset>
                                 <div class="form-group">
                                     <%= link_to notices_path do%>
-                                        <button class="btn btn-danger center-block">Noticias</button>
+                                        <button class="btn btn-lg btn-danger center-block">Noticias</button>
                                     <% end %>
                                 </div>
                                 <div class="form-group">
                                     <%= link_to materials_path do%>
-                                        <button class="btn btn-danger center-block">Materiais</button>
+                                        <button class="btn btn-lg btn-danger center-block">Materiais</button>
                                     <% end %>
                                 </div>
                                 
                                 <%= link_to "Sair", destroy_admin_session_path, method: :delete %>
                                 <!-- Change this to a button or input when using this as a form -->
-
                             </fieldset>
                         </form>
                     </div>
@@ -60,7 +56,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

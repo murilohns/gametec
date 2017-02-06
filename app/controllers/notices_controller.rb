@@ -1,6 +1,5 @@
 class NoticesController < AdminController 
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
-
   # GET /notices
   # GET /notices.json
   def index

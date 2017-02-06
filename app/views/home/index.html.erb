@@ -40,10 +40,10 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#about">Notícias</a>
+                        <a href="#noticias">Notícias</a>
                     </li>
                     <li>
-                        <a href="#services">Materiais</a>
+                        <a href="#materiais">Materiais</a>
                     </li>
                     <li>
                         <%= link_to admin_path do%>
@@ -77,7 +77,7 @@
 
     <!-- Page Content -->
 
-	<a  name="noticias"></a>
+	<a  name="noticias" id="noticias"></a>
     <div class="content-section-a">
 
         <div class="container">
@@ -100,7 +100,7 @@
 
     </div>
     <!-- /.content-section-a -->
-
+    <a  name="materiais" id="materiais"></a>
     <div class="content-section-a vermelho">
 
         <div class="container">
@@ -111,7 +111,7 @@
                     Realize o download de nossos materiais
                 </h1>
             </div>
-            <% @materials.last(3).each do |m| %>
+            <% @materials.last(3).reverse.each do |m| %>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">

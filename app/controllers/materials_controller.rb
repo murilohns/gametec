@@ -1,4 +1,4 @@
-class MaterialsController < ApplicationController
+class MaterialsController < AdminController
   layout 'admin'
   
   def index
