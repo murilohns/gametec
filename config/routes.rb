@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'news', to: 'news#index'
+
   get 'home/show_notice/:id' => 'home#show_notice'
   
   resources :materials, only: [:index, :new, :create, :destroy]
   
   resources :notices
+
   
   devise_for :admins
 

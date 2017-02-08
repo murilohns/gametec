@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gametec - Fatec Jundiaí</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <%= render partial: "layouts/site_shared/topbar" %>
+    <% @notices.reverse.each do |n| 
+      sec = n.id%2
+
+      if sec != 0%>
+
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading"><%= n.title %></h2>
+                    <p class="lead"><%= n.content %></p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                  <%= link_to image_tag(n.image.url(:thumb), class:'img-responsive img-portfolio img-hover'), n.image.url, target: '_blank' %>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <% else %>
+
+
+    <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading"><%= n.title %></h2>
+                    <p class="lead"><%= n.content %></p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                <%= link_to image_tag(n.image.url(:thumb), class:'img-responsive img-portfolio img-hover'), n.image.url, target: '_blank' %>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <% end
+    end %>
+
+  <%= render partial: "layouts/site_shared/footer" %>
+</body>
+</html>
