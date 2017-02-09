@@ -19,7 +19,15 @@
     <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
+
   <%= render partial: "layouts/site_shared/topbar" %>
+    
+    <% if admin_signed_in? %>
+    
+    <div class="content-section-a">
+        <%= link_to 'Criar Notícia', new_notice_path, class:"btn btn-info", type:"button" %> 
+        <% end %>
+    </div>
     <% @notices.reverse.each do |n| 
       sec = n.id%2
 
@@ -38,8 +46,11 @@
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                   <%= link_to image_tag(n.image.url(:thumb), class:'img-responsive img-portfolio img-hover'), n.image.url, target: '_blank' %>
                 </div>
+                  <% if admin_signed_in? %>
+                  <%= link_to 'Editar', edit_notice_path(n), class:"btn btn-success", type:"button" %> 
+                  <%= link_to 'Apagar', n, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", type:"button" %>
+                  <% end %>
             </div>
-
         </div>
         <!-- /.container -->
     </div>
@@ -59,7 +70,10 @@
                 <%= link_to image_tag(n.image.url(:thumb), class:'img-responsive img-portfolio img-hover'), n.image.url, target: '_blank' %>
                 </div>
             </div>
-
+                <% if admin_signed_in? %>
+                <%= link_to 'Editar', edit_notice_path(n), class:"btn btn-success pull-right", type:"button" %>&nbsp;
+                <%= link_to 'Apagar', n, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger pull-right", type:"button", style:"padding-right: 10px" %>
+                 <% end %>
         </div>
         <!-- /.container -->
     </div>

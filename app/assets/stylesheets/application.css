@@ -13,3 +13,7 @@
  *= require font-awesome
  *= require_self
  */
+
+ .white{
+    background-color: #D9D9DB;
+ }

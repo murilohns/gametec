@@ -18,14 +18,20 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#noticias">Notícias</a>
+                        <%= link_to "Notícias", news_path %>
                     </li>
                     <li>
-                        <a href="#materiais">Materiais</a>
+                        <%= link_to "Materiais", root_path %>
                     </li>
                     <li>
-                        <%= link_to admin_path do%>
-                            <button class="btn btn-danger">Administrador</button>
+                        <% if admin_signed_in? %>
+                            <%= link_to destroy_admin_session_path, method: :delete do%>
+                                <button class="btn btn-danger">Logout</button>
+                            <% end %>
+                        <% else  %>
+                            <%= link_to new_admin_session_path do%>
+                                 <button class="btn btn-danger">Administrador</button> 
+                            <% end %>
                         <% end %>
                     </li>
                 </ul>

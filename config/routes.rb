@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   get 'home/show_notice/:id' => 'home#show_notice'
   
-  resources :materials, only: [:index, :new, :create, :destroy]
+  resources :materials, only: [:new, :create, :destroy]
   
-  resources :notices
+  resources :notices, except:[:index, :show]
 
   
   devise_for :admins

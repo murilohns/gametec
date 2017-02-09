@@ -28,8 +28,8 @@ class NoticesController < AdminController
 
     respond_to do |format|
       if @notice.save
-        format.html { redirect_to @notice, notice: 'Notice was successfully created.' }
-        format.json { render :show, status: :created, location: @notice }
+        format.html { redirect_to news_path, notice: 'Notícia criada com sucesso.' }
+        format.json { render :show, status: :created, location: news_path }
       else
         format.html { render :new }
         format.json { render json: @notice.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class NoticesController < AdminController
   def update
     respond_to do |format|
       if @notice.update(notice_params)
-        format.html { redirect_to @notice, notice: 'Notice was successfully updated.' }
-        format.json { render :show, status: :ok, location: @notice }
+        format.html { redirect_to news_path, notice: 'Noticia editada com sucesso' }
+        format.json { render :show, status: :ok, location: news_path }
       else
         format.html { render :edit }
         format.json { render json: @notice.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class NoticesController < AdminController
   def destroy
     @notice.destroy
     respond_to do |format|
-      format.html { redirect_to notices_url, notice: 'Notice was successfully destroyed.' }
+      format.html { redirect_to news_path, notice: 'Noticia apagada com sucesso' }
       format.json { head :no_content }
     end
   end

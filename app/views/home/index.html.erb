@@ -26,7 +26,6 @@
 
 	<a  name="noticias" id="noticias"></a>
     <div class="content-section-a">
-
         <div class="container">
             <div class="row">
 	            <div class="col-lg-12">
@@ -37,15 +36,16 @@
 	                <%= link_to notice do %>
 	                    <%= link_to image_tag(n.image.url(:thumb), class:'img-responsive img-portfolio img-hover'), n.image.url, target: '_blank' %>
 	                <% end %>
-                    <%= link_to n.title, "home/show_notice/#{n.id}" %>
+                    <%= n.title %>
                     <% if admin_signed_in? %>
                         <%= link_to 'Editar', edit_notice_path(n), class:"btn btn-success", type:"button" %>
                         <%= link_to 'Apagar', n, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", type:"button" %>
                     <%end %>
 	            </div>
             <% end %>
+            <%= link_to 'Leia mais...', news_path, class:"btn btn-danger pull-right", type:"button" %>
 	        </div>
-
+            
         </div>
         <!-- /.container -->
 
@@ -62,18 +62,23 @@
                     Realize o download de nossos materiais
                 </h1>
             </div>
-            <% @materials.last(3).reverse.each do |m| %>
+            <% @materials.reverse.each do |m| %>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-check"></i> <%= m.name %></h4>
                     </div>
                     <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <% if admin_signed_in? %>
+                        <%= button_to "Deletar",  m, method: :delete, class: "btn btn-danger", confirm: "Você tem certeza que quer deletar o #{m.name}?" %>
+                        <% end %>
                         <%= link_to "Download #{m.name}", m.attachment_url %>
                     </div>
                 </div>
             </div>  
+            <% end %>
+            <% if admin_signed_in? %>
+            <%= link_to "Upload de arquivo", new_material_path, class: "btn btn-danger", type: "button" %>
             <% end %>
          </div>
 

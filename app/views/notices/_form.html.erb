@@ -1,32 +1,48 @@
-<%= form_for(notice) do |f| %>
-  <% if notice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+<div class="row">
+  <div class="col-sm-4 center col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Notícia
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-10">
 
-      <ul>
-      <% notice.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <%= form_for(notice, role:"notice") do |f| %>
+            <% if notice.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(notice.errors.count, "error") %> prohibited this notice from being saved:</h2>
+
+                <ul>
+                <% notice.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="form-group">
+                <label>Título</label>
+                  <%= f.text_field :title, class:"form-control" %>
+            </div>
+
+            <div class="form-group-lg">
+              <label>Conteúdo</label>
+              <%= f.text_area :content, class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <label>Imagem para notícia</label>
+              <%= f.file_field :image, class: 'form-control'%>
+            </div>
+            
+            <div class="actions">
+              <%= f.submit "Publicar notícia"%>
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
   </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: 'form-control'%>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -13,7 +13,7 @@ class MaterialsController < AdminController
   	 @material = Material.new(material_params)
       
       if @material.save
-         redirect_to materials_path, notice: "The material #{@material.name} has been uploaded."
+         redirect_to root_path, notice: "O arquivo #{@material.name} foi publicado."
       else
          render "new"
       end
@@ -22,7 +22,7 @@ class MaterialsController < AdminController
   def destroy
 	  @material = Material.find(params[:id])
 	  @material.destroy
-	  redirect_to materials_path, notice:  "The material #{@material.name} has been deleted."
+	  redirect_to root_path, notice:  "O arquivo #{@material.name} foi deletado."
   end
 
   private
