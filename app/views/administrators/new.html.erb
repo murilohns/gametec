@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cadastre um novo administrador</h3>
+                </div>
+                <div class="panel-body">
+                  <%= form_for @administrator, :url => administrators_path do |f| %>
+                    <fieldset>
+                      <div class="form-group">
+                        <p><%= f.label :email %>
+                        <%= f.text_field :email, class:"form-control" %></p>
+                      </div>
+                      <div class="form-group">
+                        <p><%= f.label :password  %>
+                        <%= f.password_field :password, class:"form-control" %></p>
+                      </div>
+                      <div class="form-group">
+                        <p><%= f.label :password_confirmation  %>
+                        <%= f.password_field :password_confirmation, class:"form-control" %></p>
+                      </div>
+                        <p><%= f.submit "Cadastrar", class:"btn btn-success" %></p>
+                        <%= link_to "Página Inicial", root_path %>
+                      </fieldset>
+                  <% end %>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
