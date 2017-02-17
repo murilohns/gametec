@@ -249,3 +249,7 @@ header.carousel .fill {
 .amarelo{
     background-color: #FECF37;
 }
+
+.top-buffer{
+    margin-top: 10px;
+}

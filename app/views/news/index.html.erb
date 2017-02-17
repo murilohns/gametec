@@ -22,14 +22,17 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading"><%= n.title %></h2>
                     <p class="lead"><%= n.content %></p>
+                    <p><%= n.admin.email %></p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                   <%= link_to image_tag(n.image.url(:thumb), class:'img-responsive img-portfolio img-hover'), n.image.url, target: '_blank' %>
                 </div>
+                <div>
                   <% if admin_signed_in? %>
                   <%= link_to 'Editar', edit_notice_path(n), class:"btn btn-success", type:"button" %> 
                   <%= link_to 'Apagar', n, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", type:"button" %>
                   <% end %>
+                </div>
             </div>
         </div>
         <!-- /.container -->
