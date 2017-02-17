@@ -38,6 +38,7 @@
                     </div>
                     <div class="panel-body">
                         <%= form_for(resource, as: resource_name, url: session_path(resource_name), role:"form") do |f| %>
+                            <%= devise_error_messages! %>
                             <fieldset>
                                 <div class="form-group">
                                     <!--<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus> -->
@@ -49,11 +50,12 @@
                                 <div class="checkbox">
                                     <label>
                                     <%= f.check_box :remember_me %>
-                                    Remember Me
+                                        Lembrar me
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <%= f.submit "Entrar", class:"btn btn-lg btn-success btn-block" %>
+                                <%= link_to "Página Inicial, root_path %>
                             </fieldset>
                         <% end %>
                     </div>
