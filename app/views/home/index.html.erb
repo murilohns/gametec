@@ -18,7 +18,7 @@
                     <%= n.title %>
                     <% if admin_signed_in? %>
                         <%= link_to 'Editar', edit_notice_path(n), class:"btn btn-success", type:"button" %>
-                        <%= link_to 'Apagar', n, method: :delete, confirm: 'Você tem certeza que quer apagar a notícia?', class:"btn btn-danger", type:"button" %>
+                        <%= link_to 'Apagar', n, method: :delete, data: { confirm: 'Você tem certeza?' }, class:"btn btn-danger", type:"button" %>
                     <%end %>
 	            </div>
             <% end %>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="panel-body">
                         <% if admin_signed_in? %>
-                        <%= button_to "Deletar",  m, method: :delete, class: "btn btn-danger", confirm: "Você tem certeza que quer deletar o #{m.name}?" %>
+                        <%= button_to "Deletar",  m, method: :delete, class: "btn btn-danger", data: { confirm: "Você tem certeza que quer deletar o #{m.name}?" } %>
                         <% end %>
                         <%= link_to "Download #{m.name}", m.attachment_url %>
                     </div>
