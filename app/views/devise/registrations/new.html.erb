@@ -4,24 +4,24 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, required:true, minlength:5 %>
+    <label>E-mail</label><br />
+      <%= f.email_field :email, autofocus: true, required:true, minlength:5, placeholder:"E-mail" %>
     </div>
 
     <div class="field">
-      <%= f.label :password %>
+      <label> Senha </label><br />
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", required: true, minlength:8 %>
+      <%= f.password_field :password, autocomplete: "off", required: true, minlength:8, placeholder:"Senha" %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <label>Confirme sua senha</label><br />
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", required: true, minlength:8 %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", required: true, minlength:8, placeholder:"Confirme a senha" %>
     </div>
 
     <div class="actions">

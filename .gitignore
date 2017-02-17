@@ -27,3 +27,5 @@ attachment/
 #Ignore db/seeds
 db/seeds.rb
 
+#Ignore uploaded images
+system/notices
