@@ -7,9 +7,10 @@ class AdministratorsController < AdminController
     @administrator = Admin.new(admin_params)
 
     if @administrator.save
-      flash[:notice] = "Successfully created User." 
       redirect_to root_path
+      flash[:notice] = 'Administrador Cadastrado com sucesso.'
     else
+      flash[:notice] = 'Falha ao cadastrar o administrador.'
       render :action => 'new'
     end
   end

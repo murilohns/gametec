@@ -24,16 +24,18 @@ gem 'coffee-rails', '~> 4.2'
 # My gems
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
-# Bootstrap
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+# devise i18n
+gem 'devise-i18n'
 # Font awesome
 gem 'font-awesome-rails'
 #sbadmin v2
 gem 'bootstrap_sb_admin_base_v2'
 # Easy file attachment management for ActiveRecord 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'paperclip-i18n'
 #Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks 
 gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-i18n'
 # Use jquery as the JavaScript library
 gem 'bootstrap-sass', '~> 3.3.6'
 
@@ -44,6 +46,11 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'rails_12factor', group: :production
+# Bootstrap
+gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+# Notify.js
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

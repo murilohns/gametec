@@ -10,15 +10,15 @@
                     <fieldset>
                       <div class="form-group">
                         <p><%= f.label :email %>
-                        <%= f.text_field :email, class:"form-control" %></p>
+                        <%= f.text_field :email, class:"form-control", placeholder:"E-mail do administrador" %></p>
                       </div>
                       <div class="form-group">
                         <p><%= f.label :password  %>
-                        <%= f.password_field :password, class:"form-control" %></p>
+                        <%= f.password_field :password, class:"form-control", placeholder: "Senha do administrador" %></p>
                       </div>
                       <div class="form-group">
                         <p><%= f.label :password_confirmation  %>
-                        <%= f.password_field :password_confirmation, class:"form-control" %></p>
+                        <%= f.password_field :password_confirmation, class:"form-control", placeholder: "Confirme a senha do administrador" %></p>
                       </div>
                         <p><%= f.submit "Cadastrar", class:"btn btn-success" %></p>
                         <%= link_to "Página Inicial", root_path %>
@@ -29,3 +29,4 @@
         </div>
     </div>
 </div>
+
