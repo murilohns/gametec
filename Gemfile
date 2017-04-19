@@ -33,6 +33,7 @@ gem 'bootstrap_sb_admin_base_v2'
 # Easy file attachment management for ActiveRecord 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'paperclip-i18n'
+gem 'aws-sdk'
 #Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks 
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-i18n'

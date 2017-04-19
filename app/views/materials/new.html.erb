@@ -26,11 +26,11 @@
                <%= form_for @material, html: { multipart: true } do |f| %>
                   <div class="form-group">
                      <label>Descrição do arquivo</label>
-                     <%= f.text_field :name, class:"form-control" %>
+                     <%= f.text_field :name, class:"form-control", required: true %>
                   </div>
                   <div class="form-group">
                      <label>Arquivo</label>
-                     <%= f.file_field :attachment, class:"form-control" %>
+                     <%= f.file_field :attachment, class:"form-control", required: true %>
                   </div>
                   <%= f.submit "Salvar", class: "btn btn-primary" %>
                   <%= link_to "Página Inicial", root_path %>
