@@ -5,7 +5,7 @@ CarrierWave.configure do |config|
 
   # Optionally define an asset host for configurations that are fronted by a
   # content host, such as CloudFront.
-  config.asset_host = 's3_domain_url'
+  config.asset_host = ':s3_domain_url'
 
   config.aws_credentials = {
     access_key_id:     ENV.fetch('AWS_ACCESS_KEY_ID'),
